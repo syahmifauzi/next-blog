@@ -1,20 +1,37 @@
 {
   "name": "next-blog",
   "version": "0.1.0",
-  "private": true,
+  "description": "Simple blog app",
+  "author": "Syahmi Fauzi",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "test": "jest --watch"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "js-cookie": "^3.0.1",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.4.0",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.0",
     "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
+    "tailwindcss": "^3.0.24"
   }
 }
