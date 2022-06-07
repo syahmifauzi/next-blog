@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 
 import { useAuthContext } from '@contexts/AuthContext'
 
 const AppHeader = () => {
   const { isAuthenticated, logout } = useAuthContext()
+  const router = useRouter()
 
   return (
     <div className="border-b shadow-sm">
@@ -23,7 +24,12 @@ const AppHeader = () => {
         ) : (
           <button
             className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md"
-            onClick={() => Router.push('/login')}>
+            onClick={() =>
+              router.push({
+                pathname: '/login',
+                query: { redirect: router.asPath }
+              })
+            }>
             Login
           </button>
         )}

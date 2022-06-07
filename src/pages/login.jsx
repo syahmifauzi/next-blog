@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Router from 'next/router'
-import toast from 'react-hot-toast'
 import { ImSpinner } from 'react-icons/im'
+import { useRouter } from 'next/router'
+import toast from 'react-hot-toast'
+import Head from 'next/head'
 
 import { useAuthContext } from '@contexts/AuthContext'
 
@@ -10,12 +10,14 @@ export default function LoginPage() {
   const { user, isLoading, login } = useAuthContext()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
 
   useEffect(() => {
     if (user) {
-      Router.push('/')
+      const redirect = router.query.redirect || '/'
+      router.replace(redirect)
     }
-  }, [user])
+  }, [user, router])
 
   const handleSubmit = (e) => {
     e.preventDefault()
