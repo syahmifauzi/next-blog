@@ -22,10 +22,10 @@ const PostComments = ({ comments = [] }) => {
         {items.map(({ postId, id, name, email, body }) => (
           <li key={id} className="relative">
             <div className="bg-white border rounded shadow-sm p-3 mb-2">
-              <div className="flex justify-between items-center gap-2">
-                <div className="sm:flex items-center gap-2">
-                  <h3 className="text-lg font-medium">{name}</h3>
-                  <p className="text-sm font-light">({email})</p>
+              <div className="flex items-start gap-2">
+                <div className="w-full">
+                  <h3 className="sm:inline text-lg font-medium mr-2">{name}</h3>
+                  <p className="sm:inline text-sm font-light">({email})</p>
                 </div>
                 {isAuthenticated && (
                   <button
