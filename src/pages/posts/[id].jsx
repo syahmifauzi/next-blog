@@ -23,7 +23,7 @@ export default function PostPage({ post = {}, comments = [] }) {
 
       <hr className="my-12 border-dashed border border-gray-300" />
 
-      <h1 className="text-2xl font-medium text-center my-6">Comments</h1>
+      <h2 className="text-2xl font-medium text-center my-6">Comments</h2>
       {cmtErr && <div>Error loading comments.</div>}
       {!cmtErr && !cmtData && <div>Loading comments...</div>}
       {!cmtErr && cmtData && <PostComments comments={cmtData} />}
